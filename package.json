@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Wang-kai960620/Panda-UI/issues"
   },
-  "homepage": "https://github.com/Wang-kai960620/Panda-UI#readme"
+  "homepage": "https://github.com/Wang-kai960620/Panda-UI#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }
