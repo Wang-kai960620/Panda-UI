@@ -1,3 +1,19 @@
-.xxx[data-v-7cf70c] {
-  border: 3px solid red;
+.g-button[data-v-7cf70c] {
+  height: 32px;
+  font-size: 14px;
+  background: white;
+  padding: 0 1em;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  color: #fff;
+  background: #1890ff;
+}
+.g-button[data-v-7cf70c]:active {
+  background: #0084fe;
+}
+.g-button[data-v-7cf70c]:hover {
+  border-color: #40a9ff;
+}
+.g-button[data-v-7cf70c]:focus {
+  outline: none;
 }

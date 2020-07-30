@@ -4,4 +4,12 @@
   box-sizing: border-box;
 }
 
+#app {
+  margin: 20px;
+}
+
+body {
+  font-size: var(--font-size);
+}
+
 /*# sourceMappingURL=/reset.701190cc.css.map */
