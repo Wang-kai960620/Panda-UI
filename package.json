@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Wang-kai960620/Panda-UI#readme",
   "dependencies": {
+    "typescript": "^3.9.7",
     "vue": "^2.6.11"
   }
 }
