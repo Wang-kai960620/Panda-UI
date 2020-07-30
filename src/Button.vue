@@ -19,19 +19,21 @@
     .g-button {
         height: $height;
         font-size: $font-size;
-        background: white;
         padding: 0 1em;
         border: 1px solid $border-color;
-        border-radius:5px ;
+        border-radius: 5px;
         color: $color;
         background: $bg;
-        &:active{
+
+        &:active {
             background: $active-bg;
         }
-        &:hover{
-          border-color: $hover-bg;
+
+        &:hover {
+            border-color: $hover-bg;
         }
-        &:focus{
+
+        &:focus {
             outline: none;
         }
     }
