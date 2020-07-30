@@ -1,5 +1,5 @@
 <template>
-    <button class="xxx ">
+    <button>
         <slot></slot>
     </button>
 </template>
@@ -15,7 +15,5 @@
 </script>
 
 <style lang="scss" scoped>
-.xxx{
-    border: 3px solid red;
-}
+
 </style>
