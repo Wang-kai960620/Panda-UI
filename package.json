@@ -1,0 +1,23 @@
+{
+  "name": "panda",
+  "version": "0.0.1",
+  "description": "一个UI库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wang-kai960620/Panda-UI.git"
+  },
+  "keywords": [
+    "vue",
+    "ui"
+  ],
+  "author": "wangkai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wang-kai960620/Panda-UI/issues"
+  },
+  "homepage": "https://github.com/Wang-kai960620/Panda-UI#readme"
+}
