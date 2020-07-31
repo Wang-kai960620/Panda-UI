@@ -20,7 +20,7 @@ new Vue({
   el: ("#app")
 });
 
-// //单元测试
+// 单元测试
 // import chai from "chai";
 // import spies from "chai-spies";
 //
