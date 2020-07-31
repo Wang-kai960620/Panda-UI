@@ -23958,13 +23958,74 @@ var expect = chai_1.default.expect;
       icon: "setting"
     }
   });
-  vm.$mount('#test');
-  console.log(vm);
+  vm.$mount();
+  var use = vm.$el.querySelector("use");
+  var href = use.getAttribute("xlink:href");
+  expect(href).to.equal("#i-setting");
+}
+{
+  var constructor = vue_1.default.extend(Button_1.default);
+  var vm = new constructor({
+    propsData: {
+      icon: "setting",
+      loading: true
+    }
+  });
+  vm.$mount();
   var use = vm.$el.querySelector('use');
-  console.log(use);
   var href = use.getAttribute('xlink:href');
-  console.log(href);
-  expect(href).to.equal('setting');
+  expect(href).to.equal('#i-loading');
+  vm.$el.remove();
+  vm.$destroy();
+}
+{
+  var div = document.createElement('div');
+  document.body.appendChild(div);
+  var constructor = vue_1.default.extend(Button_1.default);
+  var vm = new constructor({
+    propsData: {
+      icon: "setting"
+    }
+  });
+  vm.$mount(div);
+  var svg = vm.$el.querySelector("svg");
+  var order = window.getComputedStyle(svg).order;
+  expect(order).to.equal("0");
+  vm.$el.remove();
+  vm.$destroy();
+}
+{
+  var div = document.createElement('div');
+  document.body.appendChild(div);
+  var constructor = vue_1.default.extend(Button_1.default);
+  var vm = new constructor({
+    propsData: {
+      icon: "setting",
+      iconPosition: 'right'
+    }
+  });
+  vm.$mount(div);
+  var svg = vm.$el.querySelector("svg");
+  var order = window.getComputedStyle(svg).order;
+  expect(order).to.equal("2");
+  vm.$el.remove();
+  vm.$destroy();
+}
+{
+  var div = document.createElement('div');
+  document.body.appendChild(div);
+  var constructor = vue_1.default.extend(Button_1.default);
+  var vm = new constructor({
+    propsData: {
+      icon: "setting"
+    }
+  });
+  vm.$mount(div);
+  vm.$on('click', function () {
+    console.log('hi');
+  });
+  vm.$el.remove();
+  vm.$destroy();
 }
 },{"vue":"node_modules/vue/dist/vue.common.js","./Button":"src/Button.vue","./Icon":"src/Icon.vue","./Button-Group":"src/Button-Group.vue","chai":"node_modules/chai/index.js"}],"C:/Users/86184/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
