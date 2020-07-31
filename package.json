@@ -4,8 +4,7 @@
   "description": "一个UI库",
   "main": "index.js",
   "scripts": {
-    "dev-test": "parcel watch test/* --no-cache & karma start",
-    "test": "parcel build Button.test.ts --no-minify  && karma start --single-run "
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
