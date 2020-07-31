@@ -1,8 +1,6 @@
 <template>
     <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
-        <svg v-if="name" class="icon">
-            <use :xlink:href="`#i-${name}`"></use>
-        </svg>
+        <g-icon v-if="icon" :name="icon"></g-icon>
         <slot></slot>
     </button>
 </template>
@@ -16,10 +14,12 @@
 
   @Component
   export default class Button extends Vue {
-    @Prop(String) name: string | undefined;
-    @Prop({type:String,
-      default:'left',
-      validator(value: IconPosition): boolean {return value === "left" || value === "right";}}) iconPosition: string;
+    @Prop(String) icon: string | undefined;
+    @Prop({
+      type: String,
+      default: "left",
+      validator(value: IconPosition): boolean {return value === "left" || value === "right";}
+    }) iconPosition: string;
   };
 </script>
 
@@ -49,14 +49,6 @@
 
         &:focus {
             outline: none;
-        }
-
-        > .icon {
-            width: 1em;
-            height: 1em;
-            fill: white;
-            margin-right: .1em;
-            margin-left: 0;
         }
 
         &.icon-right {

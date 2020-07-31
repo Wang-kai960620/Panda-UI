@@ -20,15 +20,15 @@
 .g-button[data-v-7cf70c]:focus {
   outline: none;
 }
-.g-button > .icon[data-v-7cf70c] {
+.g-button.icon-right > .icon[data-v-7cf70c] {
+  order: 2;
+  margin-left: 0.1em;
+  margin-right: 0;
+}
+.icon[data-v-faec63] {
   width: 1em;
   height: 1em;
   fill: white;
   margin-right: 0.1em;
   margin-left: 0;
-}
-.g-button.icon-right > .icon[data-v-7cf70c] {
-  order: 2;
-  margin-left: 0.1em;
-  margin-right: 0;
 }
