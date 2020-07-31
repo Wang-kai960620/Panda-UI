@@ -13588,6 +13588,7 @@ new vue_1.default({
 //
 // chai.use(spies);
 // const expect = chai.expect;
+// try {
 // {
 //   const constructor = Vue.extend(Button);
 //   const vm = new constructor({
@@ -13664,6 +13665,10 @@ new vue_1.default({
 //   vm.$on("click", spy);
 //   (vm.$el as HTMLButtonElement).click();
 //   expect(spy).to.have.been.called(1);
+// }}catch (err) {
+//   console.error(err.message)
+// }finally {
+//   console.log('finally')
 // }
 },{"vue":"node_modules/vue/dist/vue.common.js","./Button":"src/Button.vue","./Icon":"src/Icon.vue","./Button-Group":"src/Button-Group.vue"}],"C:/Users/86184/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -13693,7 +13698,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52005" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64106" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

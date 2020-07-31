@@ -26,6 +26,7 @@ new Vue({
 //
 // chai.use(spies);
 // const expect = chai.expect;
+// try {
 // {
 //   const constructor = Vue.extend(Button);
 //   const vm = new constructor({
@@ -102,4 +103,8 @@ new Vue({
 //   vm.$on("click", spy);
 //   (vm.$el as HTMLButtonElement).click();
 //   expect(spy).to.have.been.called(1);
+// }}catch (err) {
+//   console.error(err.message)
+// }finally {
+//   console.log('finally')
 // }
