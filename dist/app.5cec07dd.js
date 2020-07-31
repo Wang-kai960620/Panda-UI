@@ -13221,6 +13221,16 @@ function (_super) {
     return _super !== null && _super.apply(this, arguments) || this;
   }
 
+  __decorate([vue_property_decorator_1.Prop(String)], Button.prototype, "name", void 0);
+
+  __decorate([vue_property_decorator_1.Prop({
+    type: String,
+    default: 'left',
+    validator: function validator(value) {
+      return value === "left" || value === "right";
+    }
+  })], Button.prototype, "iconPosition", void 0);
+
   Button = __decorate([vue_property_decorator_1.Component], Button);
   return Button;
 }(vue_1.default);
@@ -13236,10 +13246,27 @@ exports.default = Button;
         /* template */
         Object.assign($7cf70c, (function () {
           var render = function() {
+  var _obj
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("button", { staticClass: "g-button" }, [_vm._t("default")], 2)
+  return _c(
+    "button",
+    {
+      staticClass: "g-button",
+      class: ((_obj = {}), (_obj["icon-" + _vm.iconPosition] = true), _obj)
+    },
+    [
+      _vm.name
+        ? _c("svg", { staticClass: "icon" }, [
+            _c("use", { attrs: { "xlink:href": "#i-" + _vm.name } })
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm._t("default")
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13324,7 +13351,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61907" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49248" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -6,6 +6,10 @@
   border-radius: 5px;
   color: #fff;
   background: #1890ff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
 }
 .g-button[data-v-7cf70c]:active {
   background: #096dd9;
@@ -15,4 +19,16 @@
 }
 .g-button[data-v-7cf70c]:focus {
   outline: none;
+}
+.g-button > .icon[data-v-7cf70c] {
+  width: 1em;
+  height: 1em;
+  fill: white;
+  margin-right: 0.1em;
+  margin-left: 0;
+}
+.g-button.icon-right > .icon[data-v-7cf70c] {
+  order: 2;
+  margin-left: 0.1em;
+  margin-right: 0;
 }

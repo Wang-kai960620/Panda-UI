@@ -1,15 +1,25 @@
 <template>
-    <button class="g-button">
+    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
+        <svg v-if="name" class="icon">
+            <use :xlink:href="`#i-${name}`"></use>
+        </svg>
         <slot></slot>
     </button>
 </template>
 
 <script lang="ts">
   import Vue from "vue";
-  import {Component} from "vue-property-decorator";
+  import {Component, Prop} from "vue-property-decorator";
+
+  type IconPosition = "right" | "left"
+
 
   @Component
   export default class Button extends Vue {
+    @Prop(String) name: string | undefined;
+    @Prop({type:String,
+      default:'left',
+      validator(value: IconPosition): boolean {return value === "left" || value === "right";}}) iconPosition: string;
   };
 </script>
 
@@ -24,6 +34,10 @@
         border-radius: 5px;
         color: $color;
         background: $bg;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle; //inline-flex弹性盒bug，需要修改vertical-align的值，不能是默认值,不然无法对齐
 
         &:active {
             background: $active-bg;
@@ -35,6 +49,22 @@
 
         &:focus {
             outline: none;
+        }
+
+        > .icon {
+            width: 1em;
+            height: 1em;
+            fill: white;
+            margin-right: .1em;
+            margin-left: 0;
+        }
+
+        &.icon-right {
+            > .icon {
+                order: 2;
+                margin-left: .1em;
+                margin-right: 0;
+            }
         }
     }
 
