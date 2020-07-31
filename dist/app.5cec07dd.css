@@ -1,3 +1,11 @@
+@keyframes skin-data-v-7cf70c {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
 .g-button[data-v-7cf70c] {
   height: 32px;
   font-size: 14px;
@@ -24,6 +32,9 @@
   order: 2;
   margin-left: 0.1em;
   margin-right: 0;
+}
+.g-button .loading[data-v-7cf70c] {
+  animation: skin-data-v-7cf70c 1s linear infinite;
 }
 .icon[data-v-faec63] {
   width: 1em;

@@ -10,10 +10,14 @@
 </head>
 <body>
 <div id="app">
-    <g-button >按钮</g-button>
-    <g-button icon="setting"> 按钮</g-button>
-    <g-button icon-position="right" icon="setting">按钮</g-button>
-    <g-icon name="setting"></g-icon>
+    <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
+    <g-button icon="setting" :loading="loading2" @click="loading2 = !loading2"> 按钮</g-button>
+    <g-button icon-position="right" icon="setting" :loading="loading3" @click="loading3 = ! loading3">按钮</g-button>
+    <div>
+        <g-button>上一页</g-button>
+        <g-button>下一页</g-button>
+    </div>
+
 </div>
 <script src="./src/app.ts"></script>
 <script src="//at.alicdn.com/t/font_1978079_ko9aqhr2pv9.js"></script>

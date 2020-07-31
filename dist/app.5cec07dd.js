@@ -13223,6 +13223,8 @@ function (_super) {
 
   __decorate([vue_property_decorator_1.Prop(String)], Button.prototype, "icon", void 0);
 
+  __decorate([vue_property_decorator_1.Prop(Boolean)], Button.prototype, "loading", void 0);
+
   __decorate([vue_property_decorator_1.Prop({
     type: String,
     default: "left",
@@ -13254,10 +13256,21 @@ exports.default = Button;
     "button",
     {
       staticClass: "g-button",
-      class: ((_obj = {}), (_obj["icon-" + _vm.iconPosition] = true), _obj)
+      class: ((_obj = {}), (_obj["icon-" + _vm.iconPosition] = true), _obj),
+      on: {
+        click: function($event) {
+          return _vm.$emit("click")
+        }
+      }
     },
     [
-      _vm.icon ? _c("g-icon", { attrs: { name: _vm.icon } }) : _vm._e(),
+      _vm.icon && !_vm.loading
+        ? _c("g-icon", { attrs: { name: _vm.icon } })
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.loading
+        ? _c("g-icon", { staticClass: "loading", attrs: { name: "loading" } })
+        : _vm._e(),
       _vm._v(" "),
       _vm._t("default")
     ],
@@ -13439,10 +13452,15 @@ var Button_1 = __importDefault(require("./Button")); // @ts-ignore
 
 var Icon_1 = __importDefault(require("./Icon"));
 
-vue_1.default.component('g-button', Button_1.default);
-vue_1.default.component('g-icon', Icon_1.default);
+vue_1.default.component("g-button", Button_1.default);
+vue_1.default.component("g-icon", Icon_1.default);
 new vue_1.default({
-  el: '#app'
+  data: {
+    loading1: false,
+    loading2: false,
+    loading3: false
+  },
+  el: "#app"
 });
 },{"vue":"node_modules/vue/dist/vue.common.js","./Button":"src/Button.vue","./Icon":"src/Icon.vue"}],"C:/Users/86184/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
