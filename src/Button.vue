@@ -1,7 +1,7 @@
 <template>
-    <button  @click="$emit('click')" class="g-button" :class="{[`icon-${iconPosition}`]:true}">
+    <button @click="$emit('click')" class="g-button" :class="{[`icon-${iconPosition}`]:true}">
         <g-icon v-if="icon && !loading" :name="icon"></g-icon>
-        <g-icon v-if="loading" class="loading"  name="loading" ></g-icon>
+        <g-icon v-if="loading" class="loading" name="loading"></g-icon>
         <slot></slot>
     </button>
 </template>
@@ -16,7 +16,7 @@
   @Component
   export default class Button extends Vue {
     @Prop(String) icon: string | undefined;
-    @Prop(Boolean) loading:boolean;
+    @Prop(Boolean) loading: boolean;
     @Prop({
       type: String,
       default: "left",
@@ -27,15 +27,17 @@
 
 <style lang="scss" scoped>
     @import "./assets/help.scss";
-@keyframes skin {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
+
+    @keyframes skin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+
     }
 
-}
     .g-button {
         height: $height;
         font-size: $font-size;
@@ -68,7 +70,8 @@
                 margin-right: 0;
             }
         }
-        .loading{
+
+        .loading {
             animation: skin 1s linear infinite;
         }
     }

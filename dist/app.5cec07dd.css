@@ -43,3 +43,21 @@
   margin-right: 0.1em;
   margin-left: 0;
 }
+.g-button-group[data-v-442b10] {
+  display: inline-flex;
+  vertical-align: middle;
+}
+.g-button-group > .g-button[data-v-442b10]:not(:first-child) {
+  margin-left: -1px;
+  border-radius: 0;
+}
+.g-button-group > .g-button[data-v-442b10]:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.g-button-group > .g-button[data-v-442b10]:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.g-button-group > .g-button[data-v-442b10]:hover {
+  position: relative;
+  z-index: 1;
+}

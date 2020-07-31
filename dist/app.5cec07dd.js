@@ -13431,6 +13431,123 @@ render._withStripped = true
       
       }
     })();
+},{"vue":"node_modules/vue/dist/vue.common.js","vue-property-decorator":"node_modules/vue-property-decorator/lib/vue-property-decorator.js","_css_loader":"C:/Users/86184/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"src/Button-Group.vue":[function(require,module,exports) {
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var __extends = this && this.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) {
+        if (b.hasOwnProperty(p)) d[p] = b[p];
+      }
+    };
+
+    return _extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    _extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+      d;
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  }
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var vue_1 = __importDefault(require("vue"));
+
+var vue_property_decorator_1 = require("vue-property-decorator");
+
+var ButtonGroup =
+/** @class */
+function (_super) {
+  __extends(ButtonGroup, _super);
+
+  function ButtonGroup() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  ButtonGroup = __decorate([vue_property_decorator_1.Component], ButtonGroup);
+  return ButtonGroup;
+}(vue_1.default);
+
+exports.default = ButtonGroup;
+;
+        var $442b10 = exports.default || module.exports;
+      
+      if (typeof $442b10 === 'function') {
+        $442b10 = $442b10.options;
+      }
+    
+        /* template */
+        Object.assign($442b10, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "g-button-group" }, [_vm._t("default")], 2)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-442b10",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$442b10', $442b10);
+          } else {
+            api.reload('$442b10', $442b10);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
 },{"vue":"node_modules/vue/dist/vue.common.js","vue-property-decorator":"node_modules/vue-property-decorator/lib/vue-property-decorator.js","_css_loader":"C:/Users/86184/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"src/app.ts":[function(require,module,exports) {
 "use strict";
 
@@ -13450,10 +13567,14 @@ var vue_1 = __importDefault(require("vue")); // @ts-ignore
 var Button_1 = __importDefault(require("./Button")); // @ts-ignore
 
 
-var Icon_1 = __importDefault(require("./Icon"));
+var Icon_1 = __importDefault(require("./Icon")); // @ts-ignore
+
+
+var Button_Group_1 = __importDefault(require("./Button-Group"));
 
 vue_1.default.component("g-button", Button_1.default);
 vue_1.default.component("g-icon", Icon_1.default);
+vue_1.default.component("g-button-group", Button_Group_1.default);
 new vue_1.default({
   data: {
     loading1: false,
@@ -13462,7 +13583,7 @@ new vue_1.default({
   },
   el: "#app"
 });
-},{"vue":"node_modules/vue/dist/vue.common.js","./Button":"src/Button.vue","./Icon":"src/Icon.vue"}],"C:/Users/86184/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","./Button":"src/Button.vue","./Icon":"src/Icon.vue","./Button-Group":"src/Button-Group.vue"}],"C:/Users/86184/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
