@@ -1,4 +1,5 @@
 import Vue from "vue";
+
 // @ts-ignore
 import Button from "./Button";
 // @ts-ignore
@@ -19,3 +20,23 @@ new Vue({
   },
   el: ("#app")
 });
+
+//单元测试
+import chai from "chai";
+
+const expect = chai.expect;
+{
+  const constructor = Vue.extend(Button);
+  const vm = new constructor({
+    propsData: {
+      icon: "setting"
+    }
+  });
+  vm.$mount('#test')
+  console.log(vm);
+  const use = vm.$el.querySelector('use')
+  console.log(use);
+  const href = use.getAttribute('xlink:href')
+  console.log(href);
+  expect(href).to.equal('setting')
+}
