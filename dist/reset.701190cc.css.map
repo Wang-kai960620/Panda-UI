@@ -1,1 +1,0 @@
-{"version":3,"sources":["src\\assets\\reset.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA;;;AAEF;EACE;;;AAGF;EACE","file":"reset.701190cc.css","sourceRoot":"..","sourcesContent":["\r\n\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n#app{\r\n  margin: 20px;\r\n}\r\n\r\nbody{\r\n  font-size: 14px;\r\n}\r\n\r\n"]}
