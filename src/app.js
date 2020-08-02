@@ -11,6 +11,7 @@ Vue.component("g-button-group", ButtonGroup);
 Vue.component('g-input', Input)
 new Vue({
 
+
     data: {
         loading1: false,
         loading2: false,
