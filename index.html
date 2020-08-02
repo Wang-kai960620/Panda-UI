@@ -10,18 +10,26 @@
 </head>
 <body>
 <div id="app">
-    <div id="test"></div>
-    <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
-    <g-button icon="setting" :loading="loading2" @click="loading2 = !loading2"> 按钮</g-button>
-    <g-button icon-position="right" icon="setting" :loading="loading3" @click="loading3 = ! loading3">按钮</g-button>
-    <g-button-group>
-        <g-button icon="left">上一页</g-button>
-        <g-button>更多</g-button>
-        <g-button icon="right" icon-position="right">下一页</g-button>
-    </g-button-group>
+    <g-input v-model="message"></g-input>
+    <g-input value="第一个输入框"></g-input>
+    <g-input value="不可选中修改的" disable></g-input>
+    <g-input value="只读的" readonly></g-input>
+    <g-input value="差一个" error="输入的字符长度有错"></g-input>
+    <p>{{message}}</p>
+    <button @click="message+=1">加一</button>
+    <div style="margin: 20px 0">
+        <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
+        <g-button icon="setting" :loading="!loading2" @click="loading2 = !loading2"> 按钮</g-button>
+        <g-button icon-position="right" icon="setting" :loading="loading3" @click="loading3 = ! loading3">按钮</g-button>
+        <g-button-group>
+            <g-button icon="left">上一页</g-button>
+            <g-button>更多</g-button>
+            <g-button icon="right" icon-position="right">下一页</g-button>
+        </g-button-group>
+    </div>
 
 </div>
-<script src="./src/app.ts"></script>
-<script src="//at.alicdn.com/t/font_1978079_ko9aqhr2pv9.js"></script>
+<script src="src/app.js"></script>
+<script src="//at.alicdn.com/t/font_1978079_5842dxjlo5f.js"></script>
 </body>
 </html>
