@@ -3,12 +3,15 @@ import Button from "./Button";
 import Icon from "./Icon";
 import ButtonGroup from "./Button-Group";
 import Input from './Input'
-
+import Row from './Row'
+import Column from "./Column";
 
 Vue.component("g-button", Button);
 Vue.component("g-icon", Icon);
 Vue.component("g-button-group", ButtonGroup);
 Vue.component('g-input', Input)
+Vue.component('g-row', Row)
+Vue.component('g-col', Column)
 new Vue({
 
 

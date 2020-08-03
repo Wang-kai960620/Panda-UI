@@ -3,6 +3,8 @@
   "os": [
     "windows"
   ],
+  "sudo": "required",
+  "dist": "trusty",
   "node_js": [
     "10"
   ],
