@@ -3,10 +3,10 @@
   "os": [
     "windows"
   ],
-  "dist": "xenial",
   "node_js": [
-    "8"
+    "10"
   ],
+  "install":"yarn ",
   "addons": {
     "chrome": "stable"
   },
