@@ -6,17 +6,21 @@
 
 <script lang="ts">
   import Vue from "vue";
-  import {Component, Prop} from "vue-property-decorator";
+  import {Component, Prop, Provide} from "vue-property-decorator";
 
   @Component
   export default class Tab extends Vue {
-    @Prop({type: String}) select: string;
+    @Prop({type: String}) selected: string;
     @Prop({
       type: String,
       default: "row",
       validator(value: string): boolean {return ["row", "column"].indexOf(value) >= 0;}
     }) direction: string;
-    name: "Tab";
+    @Provide(Object) eventbus = new Vue();
+
+    mounted() {
+      this.eventbus.$emit("update:selected", this.selected);
+    }
   };
 </script>
 

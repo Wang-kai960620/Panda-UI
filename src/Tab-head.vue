@@ -1,22 +1,49 @@
 <template>
     <div class="tab-head">
         <slot></slot>
-        <slot name="actions"></slot>
+        <div class="line" ref="line"></div>
+        <div class="wrapper">
+            <slot name="actions"></slot>
+        </div>
     </div>
 </template>
 
 <script lang="ts">
   import Vue from "vue";
-  import {Component, Prop} from "vue-property-decorator";
+  import {Component, Inject} from "vue-property-decorator";
 
   @Component
   export default class TabHead extends Vue {
+    @Inject(Object) eventbus!: object;
+
     name: "Tab-head";
   };
 </script>
 
 <style lang="scss" scoped>
+    @import "./assets/help.scss";
+
     .tab-head {
 
+        display: flex;
+        height: 40px;
+        justify-content: flex-start;
+        position: relative;
+        border-bottom: 1px solid $border-color;
+
+        > .line {
+            position: absolute;
+            bottom: 0;
+            border-bottom: 1px solid $border-color;
+            transition: all 350ms;
+        }
+
+        > .wrapper {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0  .1em;
+        }
     }
 </style>

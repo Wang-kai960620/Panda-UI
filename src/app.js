@@ -36,10 +36,10 @@ Vue.component('g-tab-item', TabItem)
 Vue.component('g-tab-pane', TabPane)
 Vue.use(plugin)
 
+
 new Vue({
     data: {
-        selected: '美女',
+        selected: 'woman',
     },
-    methods: {}
 }).$mount('#app')
 

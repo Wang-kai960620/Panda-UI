@@ -5,17 +5,17 @@
 </template>
 
 <script lang="ts">
-    import Vue from 'vue'
-  import {Component} from "vue-property-decorator";
+  import Vue from "vue";
+  import {Component, Inject} from "vue-property-decorator";
 
   @Component
   export default class TabBody extends Vue {
-    name: "Tab-body";
+    @Inject(Object) eventbus!: object;
   };
 </script>
 
 <style lang="scss" scoped>
-.tab-body{
+    .tab-body {
 
-}
+    }
 </style>

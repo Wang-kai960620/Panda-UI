@@ -10,22 +10,22 @@
 </head>
 <body>
 <div id="app">
-    <g-tab selected="selected">
+    <g-tab :selected.sync="selected">
         <g-tab-head>
-            <g-tab-item disabled>
+            <g-tab-item name="woman">
                 <g-icon name="setting"></g-icon>
                 美女
             </g-tab-item>
-            <g-tab-item>体育</g-tab-item>
-            <g-tab-item>财经</g-tab-item>
+            <g-tab-item name="sport">体育</g-tab-item>
+            <g-tab-item name="money">财经</g-tab-item>
             <template slot="actions">
                 <button>actions</button>
             </template>
         </g-tab-head>
         <g-tab-body>
-            <g-tab-pane>美女相关资讯</g-tab-pane>
-            <g-tab-pane>体育相关资讯</g-tab-pane>
-            <g-tab-pane>财经相关资讯</g-tab-pane>
+            <g-tab-pane name="woman">美女相关资讯</g-tab-pane>
+            <g-tab-pane name="sport">体育相关资讯</g-tab-pane>
+            <g-tab-pane name="money">财经相关资讯</g-tab-pane>
         </g-tab-body>
     </g-tab>
 </div>
