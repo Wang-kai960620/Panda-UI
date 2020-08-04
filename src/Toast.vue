@@ -1,7 +1,9 @@
 <template>
-    <div class="toast">
-        <slot></slot>
-        <div class="line"></div>
+    <div class="toast" ref="wrapper" :class="seat">
+        <div class="min">
+            <slot></slot>
+        </div>
+        <div class="line" ref="line"></div>
         <span class="close" v-if="closeButton" @click="onclickClose">{{closeButton[`test`]}}</span>
     </div>
 </template>
@@ -18,13 +20,20 @@
       type: Object, default: () => {
         return {
           test: "关闭",
-          callback: (toast) => {
-            toast.close();
-          }
+          callback: undefined
         };
       }
     }) closeButton: object;
 
+    @Prop({
+      type: String,
+      default: "top",
+      validator(value: string): boolean {return ["top", "bottom", "middle"].indexOf(value) >= 0;}
+    }) position: string;
+
+    get seat() {
+      return {[`position-${this.position}`]: true};
+    }
 
     mounted() {
       if (this.autoClose) {
@@ -32,6 +41,11 @@
           this.close();
         }, this.autoCloseTime * 1000);
       }
+      this.$nextTick(() => {
+        const wrapper = this.$refs.wrapper as HTMLDivElement;
+        const line = this.$refs.line as HTMLSpanElement;
+        line.style.height = String(wrapper.getBoundingClientRect().height) + "px";
+      });
     }
 
     close() {
@@ -40,8 +54,10 @@
     }
 
     onclickClose() {
-      this.close();
-      this.closeButton.callback();
+      if (this.closeButton && typeof this.closeButton.callback === "function") {
+        this.close();
+        this.closeButton.callback();
+      }
     }
   };
 </script>
@@ -51,27 +67,47 @@
 
     .toast {
         position: fixed;
-        height: 40px;
-        top: 0;
+        min-height: 40px;
         left: 50%;
-        transform: translateX(-50%);
         font-size: $font-size;
         display: flex;
         align-items: center;
         background: $bg;
-        border-radius: 3px;
+        border-radius: 5px;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
         padding: 0 16px;
+
+        > .min {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 300px;
+        }
+
+        > .close {
+            padding-left: 16px;
+            flex-shrink: 0;
+        }
+
+        > .line {
+            border-left: 1px solid #ccc;
+            margin-left: 16px;
+        }
+
+        &.position-top {
+            top: 0;
+            transform: translateX(-50%);
+        }
+
+        &.position-middle {
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &.position-bottom {
+            bottom: 0;
+            transform: translateX(-50%);
+        }
     }
 
-    .close {
-        padding-left: 16px;
-        flex-shrink: 0;
-    }
 
-    .line {
-        height: 100%;
-        border-left: 1px solid white;
-        margin-left: 16px;
-    }
 </style>

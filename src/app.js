@@ -35,7 +35,17 @@ new Vue({
     },
     methods: {
         showToast() {
-            this.$toast('hi')
+            this.$toast('不充值能变强吗？',
+                {
+                    autoClose: true,
+                    position: 'middle',
+                    closeButton: {
+                        test: '关闭index.html',
+                        callback() {
+                            console.log('know');
+                        }
+                    }
+                })
         }
     }
 }).$mount('#app')
