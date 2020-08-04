@@ -1,6 +1,8 @@
 <template>
-    <div class="tab-pane"  v-if="active" :class="classes">
-        <slot></slot>
+    <div class="tab-pane" v-if="active" :class="classes">
+        <div class="wrapper">
+            <slot></slot>
+        </div>
     </div>
 </template>
 
@@ -28,9 +30,25 @@
 </script>
 
 <style lang="scss" scoped>
+
+    @keyframes pane-up {
+        0% {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
     .tab-pane {
+        padding: 1em 0;
+        opacity: 1;
+
+
         &.active {
-            background: #40a9ff;
+            animation: pane-up 300ms;
         }
     }
 </style>

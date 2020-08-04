@@ -16,6 +16,8 @@
 
 <style lang="scss" scoped>
     .tab-body {
-
+        border: 1px solid blue;
+        margin: 1em 0 ;
+        padding: 5px 1em;
     }
 </style>

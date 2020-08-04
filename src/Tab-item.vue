@@ -1,5 +1,5 @@
 <template>
-    <div class="tab-item" @click="xxx" :class="classes">
+    <div class="tab-item" @click="onClick" :class="classes">
         <slot></slot>
     </div>
 </template>
@@ -10,13 +10,16 @@
 
   @Component
   export default class TabItem extends Vue {
-    @Prop({type: Boolean, default: true}) disable: boolean;
+    @Prop({type: Boolean, default: false}) disable: boolean;
     @Prop(String) name: string;
     @Inject(Object) eventbus!: object;
     active: Boolean = false;
 
     get classes() {
-      return {active: this.active};
+      return {
+        active: this.active,
+        disable: this.disable
+      };
     }
 
     mounted() {
@@ -25,7 +28,8 @@
       });
     }
 
-    xxx() {
+    onClick() {
+      if (this.disable) {return; }
       this.eventbus.$emit("update:selected", this.name);
     }
 
@@ -34,16 +38,25 @@
 
 <style lang="scss" scoped>
     .tab-item {
+        flex-shrink: 0;
         margin: 0 .1em;
         display: flex;
-        border-radius: 4px;
+        border-radius: 4px 4px 0 0;
         justify-content: center;
         align-items: center;
-        border: 1px solid red;
+        border: .5px solid #ccc;
         padding: 0 10px;
+        cursor: pointer;
 
         &.active {
             background: #40a9ff;
+            color: white;
+            transition: all .5s;
+        }
+
+        &.disable {
+            color: #bfbfbf;
+            cursor: not-allowed;
         }
     }
 </style>
