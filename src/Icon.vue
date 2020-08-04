@@ -6,7 +6,7 @@
 
 <script lang="ts">
   import Vue from "vue";
-  import './Svg.js'
+  import "./Svg.js";
 
   import {Component, Prop} from "vue-property-decorator";
 
@@ -20,7 +20,7 @@
     .icon {
         width: 1em;
         height: 1em;
-        fill: white;
+        fill: black;
         margin-right: .1em;
         margin-left: 0;
     }

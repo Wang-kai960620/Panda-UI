@@ -11,6 +11,11 @@ import Sider from "./Sider";
 import Footer from "./Footer";
 import Content from "./Content";
 import plugin from "./plugin";
+import Tab from "./Tab";
+import TabHead from "./Tab-head";
+import TabBody from "./Tab-body";
+import TabItem from "./Tab-item";
+import TabPane from "./Tab-pane";
 
 
 Vue.component("g-button", Button);
@@ -24,29 +29,17 @@ Vue.component('g-header', Header)
 Vue.component('g-sider', Sider)
 Vue.component('g-footer', Footer)
 Vue.component('g-content', Content)
+Vue.component('g-tab', Tab)
+Vue.component('g-tab-head', TabHead)
+Vue.component('g-tab-body', TabBody)
+Vue.component('g-tab-item', TabItem)
+Vue.component('g-tab-pane', TabPane)
 Vue.use(plugin)
 
 new Vue({
     data: {
-        loading1: false,
-        loading2: false,
-        loading3: false,
-        message: '请在这里输入！！！'
+        selected: '美女',
     },
-    methods: {
-        showToast() {
-            this.$toast('不充值能变强吗？',
-                {
-                    autoClose: true,
-                    position: 'middle',
-                    closeButton: {
-                        test: '关闭index.html',
-                        callback() {
-                            console.log('know');
-                        }
-                    }
-                })
-        }
-    }
+    methods: {}
 }).$mount('#app')
 
