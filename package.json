@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@types/mocha": "^8.0.0",
+    "@types/vue": "^2.0.0",
     "@vue/component-compiler-utils": "^3.2.0",
     "chai": "^4.2.0",
     "chai-spies": "^1.0.0",

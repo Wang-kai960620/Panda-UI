@@ -10,6 +10,7 @@ import Header from "./Header";
 import Sider from "./Sider";
 import Footer from "./Footer";
 import Content from "./Content";
+import plugin from "./plugin";
 
 
 Vue.component("g-button", Button);
@@ -23,14 +24,19 @@ Vue.component('g-header', Header)
 Vue.component('g-sider', Sider)
 Vue.component('g-footer', Footer)
 Vue.component('g-content', Content)
+Vue.use(plugin)
+
 new Vue({
-
-
     data: {
         loading1: false,
         loading2: false,
         loading3: false,
         message: '请在这里输入！！！'
     },
+    methods: {
+        showToast() {
+            this.$toast('hi')
+        }
+    }
 }).$mount('#app')
 
