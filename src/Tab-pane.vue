@@ -48,7 +48,7 @@
 
 
         &.active {
-            animation: pane-up 300ms;
+            animation: pane-up 500ms;
         }
     }
 </style>

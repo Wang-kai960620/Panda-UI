@@ -16,6 +16,9 @@
   export default class TabHead extends Vue {
     @Inject(Object) eventbus!: object;
 
+    mounted() {
+    }
+
     name: "Tab-head";
   };
 </script>

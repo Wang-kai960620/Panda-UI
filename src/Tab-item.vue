@@ -1,5 +1,6 @@
 <template>
     <div class="tab-item" @click="onClick" :class="classes">
+        <div class="line" ref="line"></div>
         <slot></slot>
     </div>
 </template>
@@ -11,9 +12,10 @@
   @Component
   export default class TabItem extends Vue {
     @Prop({type: Boolean, default: false}) disable: boolean;
-    @Prop(String) name: string;
+    @Prop({type: String, required: true}) name: string;
     @Inject(Object) eventbus!: object;
     active: Boolean = false;
+
 
     get classes() {
       return {

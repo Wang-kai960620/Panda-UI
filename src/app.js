@@ -39,7 +39,7 @@ Vue.use(plugin)
 
 new Vue({
     data: {
-        selected: 'woman',
+        selected: 'sport',
     },
 }).$mount('#app')
 
