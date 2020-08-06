@@ -24,10 +24,8 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "./assets/help.scss";
-
+    $border-color: #d9d9d9;
     .tab-head {
-
         display: flex;
         height: 40px;
         justify-content: flex-start;

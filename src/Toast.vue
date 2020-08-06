@@ -64,7 +64,8 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "assets/help.scss";
+    $font-size: 14px;
+    $bg: #1890ff;
 
     @keyframes slide-up {
         0% {

@@ -26,8 +26,13 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "./assets/help.scss";
-
+    $font-size: 14px;
+    $height: 32px;
+    $bg: #1890ff;
+    $active-bg: #096dd9;
+    $color: #fff;
+    $border-color: #d9d9d9;
+    $hover-bg: #40a9ff;
     @keyframes skin {
         0% {
             transform: rotate(0deg);

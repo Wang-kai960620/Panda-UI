@@ -38,7 +38,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "./assets/help.scss";
+    $border-color: #d9d9d9;
 
     .wrapper {
         border: 1px solid $border-color;

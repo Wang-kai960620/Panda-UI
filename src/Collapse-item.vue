@@ -54,12 +54,14 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "./assets/help.scss";
+    $height: 32px;
+    $bg: #1890ff;
+    $border-color: #d9d9d9;
 
     .collapseItem {
 
         > * {
-            min-height: 32px;
+            min-height: $height;
         }
 
         > .title {
