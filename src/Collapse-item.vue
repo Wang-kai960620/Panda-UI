@@ -1,18 +1,20 @@
 <template>
     <div class="collapseItem">
-        <div class="title" @click="show=!show" :class="iconClass">
-            <Icon name="right" ></Icon>
+        <div class="title" @click="onClick" :class="iconClass">
+            <Icon name="right"></Icon>
             {{title}}
         </div>
-        <div class="content" v-if="show">
-            <slot></slot>
+        <div class="content" v-if="show" :class="iconClass">
+            <div class="line">
+                <slot></slot>
+            </div>
         </div>
     </div>
 </template>
 
 <script lang="ts">
   import Vue from "vue";
-  import {Component, Prop} from "vue-property-decorator";
+  import {Component, Inject, Prop} from "vue-property-decorator";
   import Icon from "./Icon.vue";
 
   @Component({
@@ -20,18 +22,44 @@
   })
   export default class CollapseItem extends Vue {
     @Prop({type: String, required: true}) title: String;
-    @Prop({type: Boolean, default: false}) show: Boolean;
+    @Prop({type: String}) name: string;
+    @Prop({type: Boolean, default: false}) disable: boolean;
+    @Inject(Object) eventbus: object;
+
+    show = false;
 
     get iconClass() {
-      return {show: this.show};
+      return {
+        show: this.show,
+        disable: this.disable
+      };
     }
-  };
+
+    mounted() {
+      console.log(`this.disable + ${this.name}`);
+      console.log(this.disable);
+      this.eventbus.$on("update:selected", (value) => {
+        this.show = value.indexOf(this.name) >= 0;
+      });
+    }
+
+    onClick() {
+      if (this.show) {
+        this.eventbus.$emit("removeSelected", this.name);
+      } else if (!this.disable) {
+        this.eventbus.$emit("addSelected", this.name);
+      }
+    }
+
+  }
+  ;
 </script>
 
 <style lang="scss" scoped>
     @import "./assets/help.scss";
 
     .collapseItem {
+
         > * {
             min-height: 32px;
         }
@@ -44,7 +72,22 @@
             align-items: center;
             padding: 0 8px;
             border: 1px solid $border-color;
-            >.icon{
+            cursor: pointer;
+            position: relative;
+
+            &.disable {
+                background: #fafafa;
+                cursor: not-allowed;
+                color: #cbc9c3;
+
+                &:hover {
+                    border-color: $border-color;
+
+                    z-index: 0;
+                }
+            }
+
+            > .icon {
                 transition: all 500ms;
             }
 
@@ -53,8 +96,9 @@
                 border-color: $bg;
                 z-index: 1;
             }
-            &.show{
-                >.icon{
+
+            &.show {
+                > .icon {
                     transform: rotate(90deg);
                     transition: all 500ms;
                 }
@@ -82,6 +126,10 @@
             display: flex;
             align-items: center;
             padding: 0 8px;
+
+            &.show {
+                transition: all 2s;
+            }
         }
     }
 </style>

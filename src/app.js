@@ -37,15 +37,15 @@ Vue.component('g-tab-head', TabHead)
 Vue.component('g-tab-body', TabBody)
 Vue.component('g-tab-item', TabItem)
 Vue.component('g-tab-pane', TabPane)
-Vue.component('g-popover',Popover)
-Vue.component('g-collapse',Collapse)
-Vue.component('g-collapse-item',CollapseItem)
+Vue.component('g-popover', Popover)
+Vue.component('g-collapse', Collapse)
+Vue.component('g-collapse-item', CollapseItem)
 Vue.use(plugin)
 
 
 new Vue({
     data: {
-        selected: 'sport',
+        selected: ['2'],
     },
 }).$mount('#app')
 

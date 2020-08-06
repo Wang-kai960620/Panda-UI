@@ -6,11 +6,34 @@
 
 <script lang="ts">
   import Vue from "vue";
-  import {Component} from "vue-property-decorator";
+  import {Component, Prop, Provide} from "vue-property-decorator";
 
   @Component
   export default class Collapse extends Vue {
-    name: "Collapse";
+    @Prop(Array) selected: [];
+    @Prop({type: Boolean, default: false}) collapse: boolean;
+    @Provide(Object) eventbus = new Vue();
+
+    mounted() {
+      this.eventbus.$emit("update:selected", this.selected);
+      this.eventbus.$on("removeSelected", (value) => {
+        let selectedCopy = JSON.parse(JSON.stringify(this.selected));
+
+        const index = selectedCopy.indexOf(value);
+        selectedCopy.splice(index, 1);
+        this.eventbus.$emit("update:selected", selectedCopy);
+      });
+      this.eventbus.$on("addSelected", (value) => {
+        let selectedCopy = JSON.parse(JSON.stringify(this.selected));
+        if (this.collapse) {
+          selectedCopy = [value];
+          this.eventbus.$emit("update:selected", selectedCopy);
+        } else {
+          selectedCopy.push(value);
+          this.eventbus.$emit("update:selected", selectedCopy);
+        }
+      });
+    }
   };
 </script>
 
