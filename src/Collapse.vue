@@ -18,20 +18,20 @@
       this.eventbus.$emit("update:selected", this.selected);
       this.eventbus.$on("removeSelected", (value) => {
         let selectedCopy = JSON.parse(JSON.stringify(this.selected));
-
         const index = selectedCopy.indexOf(value);
         selectedCopy.splice(index, 1);
         this.eventbus.$emit("update:selected", selectedCopy);
+        this.$emit("update:selected", selectedCopy);
       });
       this.eventbus.$on("addSelected", (value) => {
         let selectedCopy = JSON.parse(JSON.stringify(this.selected));
         if (this.collapse) {
           selectedCopy = [value];
-          this.eventbus.$emit("update:selected", selectedCopy);
         } else {
           selectedCopy.push(value);
-          this.eventbus.$emit("update:selected", selectedCopy);
         }
+        this.eventbus.$emit("update:selected", selectedCopy);
+        this.$emit("update:selected", selectedCopy);
       });
     }
   };

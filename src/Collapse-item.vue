@@ -36,8 +36,6 @@
     }
 
     mounted() {
-      console.log(`this.disable + ${this.name}`);
-      console.log(this.disable);
       this.eventbus.$on("update:selected", (value) => {
         this.show = value.indexOf(this.name) >= 0;
       });
