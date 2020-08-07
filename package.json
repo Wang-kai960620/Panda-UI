@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Wang-kai960620/Panda-UI#readme",
   "dependencies": {
+    "sass-loader": "^9.0.3",
     "typescript": "^3.9.7",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.5",
@@ -47,6 +48,7 @@
     "karma-sinon-chai": "^2.0.2",
     "mocha": "^8.1.0",
     "sass": "^1.26.10",
+    "scss-loader": "^0.0.1",
     "sinon": "^9.0.2",
     "sinon-chai": "^3.5.0",
     "vue-template-compiler": "^2.6.11",

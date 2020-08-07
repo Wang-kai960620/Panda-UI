@@ -10,7 +10,7 @@ title:快速上手 -
 
 ## 1 ：安装 Panda-UI
 
-```
+```js
 npm install panda-20200806
 # OR
 yarn add panda-20200806
@@ -18,30 +18,27 @@ yarn add panda-20200806
 
 ## 2 ：创建一个 vue 项目
 
-```
+```js
 $ vue create demo
 ```
 
 ## 3 ：使用组件
 
-```
+```js
 //使用时需要引入css文件
-import 'panda-20200806/dist/index.css'
-import Vue from 'vue';
-import { Button, Icon } from 'panda-20200806';
-import App from './App';
-
+import "panda-20200806/dist/index.css";
+import Vue from "vue";
+import { Button, Icon } from "panda-20200806";
+import App from "./App";
 
 Vue.config.productionTip = false;
 
 Vue.component(Button, Button);
 Vue.component(Input, Input);
 
-
-
 new Vue({
-  el: '#app',
+  el: "#app",
   components: { App },
-  template: '<App/>',
+  template: "<App/>",
 });
 ```
