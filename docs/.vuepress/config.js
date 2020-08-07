@@ -12,18 +12,19 @@ module.exports = {
     sidebar: [
       {
         title: "快速上手",
-        children: ["/guide//install/"],
+        children: ["/guide/install/"],
       },
       {
         title: "Components",
         children: [
           "/guide/components/button",
-          // "/components/tabs",
-          // "/components/input",
-          // "/components/grid",
-          // "/components/layout",
-          // "/components/toast",
-          // "/components/tabs",
+          "/guide/components/tabs",
+          "/guide/components/input",
+          "/guide/components/grid",
+          "/guide/components/layout",
+          "/guide/components/toast",
+          "/guide/components/popover",
+          "/guide/components/collapse",
         ],
       },
     ],
