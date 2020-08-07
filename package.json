@@ -1,11 +1,13 @@
 {
   "name": "panda-20200806",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "一个UI库",
   "main": "dist/index.js",
   "scripts": {
     "start": "parcel index.html --no-cache",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -47,6 +49,7 @@
     "sass": "^1.26.10",
     "sinon": "^9.0.2",
     "sinon-chai": "^3.5.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.5.3"
   }
 }

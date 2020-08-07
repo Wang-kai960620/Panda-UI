@@ -64,10 +64,12 @@
 
         > [disabled] {
             cursor: not-allowed;
+            border-color: #d9d9d9;
         }
 
         > [readonly] {
             cursor: not-allowed;
+            border-color: #d9d9d9;
         }
 
         &.error {

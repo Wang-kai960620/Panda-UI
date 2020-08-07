@@ -55,6 +55,9 @@
         justify-content: center;
         align-items: center;
         vertical-align: middle; //inline-flex弹性盒bug，需要修改vertical-align的值，不能是默认值,不然无法对齐
+        > .icon {
+            fill: white;
+        }
 
         &:active {
             background: $active-bg;
