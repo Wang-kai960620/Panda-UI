@@ -52,6 +52,8 @@
     "sinon": "^9.0.2",
     "sinon-chai": "^3.5.0",
     "vue-template-compiler": "^2.6.11",
-    "vuepress": "^1.5.3"
+    "vuepress": "^1.5.3",
+    "vuepress-plugin-typescript": "^0.3.0",
+    "vuepress-types": "^0.9.3"
   }
 }

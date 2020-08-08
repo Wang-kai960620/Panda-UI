@@ -1,5 +1,5 @@
 <template>
-    <div class="layout" :class="">
+    <div class="layout" :class="isHasSider">
         <slot></slot>
     </div>
 </template>

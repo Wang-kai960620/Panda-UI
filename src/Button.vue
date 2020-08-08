@@ -10,9 +10,6 @@
   import Vue from "vue";
   import {Component, Prop} from "vue-property-decorator";
 
-  type IconPosition = "right" | "left"
-
-
   @Component
   export default class Button extends Vue {
     @Prop(String) icon: string | undefined;
@@ -20,7 +17,7 @@
     @Prop({
       type: String,
       default: "left",
-      validator(value: IconPosition): boolean {return value === "left" || value === "right";}
+      validator(value: "right" | "left"): boolean {return value === "left" || value === "right";}
     }) iconPosition: string;
   };
 </script>

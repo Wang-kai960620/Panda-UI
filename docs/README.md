@@ -10,8 +10,7 @@ features:
 footer: MIT Licensed | Copyright © 2019-present FeiHong
 ---
 
-### 12345
-
+### 安装指南
 ```bash
 # clone item
 git clone git@github.com:Wang-kai960620/Panda-UI.git
